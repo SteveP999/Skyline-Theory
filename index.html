@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skyline Theory — Official Music</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300&family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+:root{
+  --bg:        #05040E;
+  --bg2:       #08071A;
+  --bg3:       #0C0B22;
+  --violet:    #8B5CF6;
+  --violet-lt: #A78BFA;
+  --cyan:      #22D3EE;
+  --cyan-lt:   #67E8F9;
+  --pink:      #EC4899;
+  --white:     #F0EEFF;
+  --muted:     #6B6880;
+  --border:    rgba(139,92,246,0.15);
+}
+
+body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;font-size:15px;line-height:1.75;}
+
+/* ── SCANLINE ── */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.02;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(139,92,246,0.04) 3px,rgba(139,92,246,0.04) 4px);}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0.85rem 2.5rem;background:transparent;border-bottom:1px solid transparent;
+  transition:background 0.4s,border-color 0.4s;}
+nav.scrolled{background:rgba(5,4,14,0.97);border-color:var(--border);backdrop-filter:blur(12px);}
+.nav-logo{height:36px;width:auto;filter:drop-shadow(0 0 10px rgba(139,92,246,0.6));}
+.nav-links{display:flex;gap:1.8rem;list-style:none;}
+.nav-links a{font-family:'Exo 2',sans-serif;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--violet-lt);}
+
+/* ── HERO ── */
+.hero{position:relative;height:100vh;min-height:640px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;text-align:center;}
+
+/* Atmospheric layered background */
+.hero-bg{position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(139,92,246,0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 20% 70%, rgba(34,211,238,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 80% 30%, rgba(236,72,153,0.08) 0%, transparent 55%),
+    linear-gradient(180deg, #050414 0%, #07051A 50%, #05040E 100%);}
+
+/* Animated aurora lines */
+.hero-aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+.aurora-line{position:absolute;width:100%;height:1px;opacity:0.15;}
+.aurora-line:nth-child(1){top:30%;background:linear-gradient(90deg,transparent 0%,var(--violet) 30%,var(--cyan) 60%,transparent 100%);animation:aurora1 8s ease-in-out infinite;}
+.aurora-line:nth-child(2){top:55%;background:linear-gradient(90deg,transparent 0%,var(--cyan) 20%,var(--pink) 70%,transparent 100%);animation:aurora2 11s ease-in-out infinite;}
+.aurora-line:nth-child(3){top:70%;background:linear-gradient(90deg,transparent 10%,var(--violet) 50%,transparent 100%);animation:aurora1 14s ease-in-out infinite reverse;}
+@keyframes aurora1{0%,100%{transform:translateX(-10%) scaleY(1)}50%{transform:translateX(10%) scaleY(3)}}
+@keyframes aurora2{0%,100%{transform:translateX(5%) scaleY(1)}50%{transform:translateX(-8%) scaleY(2.5)}}
+
+.hero-grid{position:absolute;inset:0;
+  background-image:linear-gradient(rgba(139,92,246,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,0.04) 1px,transparent 1px);
+  background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 100%);}
+
+.hero-content{position:relative;z-index:2;padding:0 2rem;max-width:750px;}
+.hero-logo-wrap{margin-bottom:2rem;}
+.hero-logo-wrap img{height:120px;width:auto;
+  filter:drop-shadow(0 0 30px rgba(139,92,246,0.7)) drop-shadow(0 0 80px rgba(34,211,238,0.3));}
+.hero-tagline{font-family:'Exo 2',sans-serif;font-weight:200;font-size:clamp(0.75rem,1.5vw,0.88rem);
+  letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;line-height:2.2;}
+.hero-title-text{font-family:'Orbitron',sans-serif;font-size:clamp(0.7rem,1.2vw,0.8rem);
+  letter-spacing:0.5em;text-transform:uppercase;
+  background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:2.5rem;}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+.cta-primary{font-family:'Exo 2',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.9rem 2.2rem;background:linear-gradient(135deg,var(--violet),var(--cyan));
+  color:var(--bg);border:none;cursor:pointer;
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
+  transition:opacity 0.2s,box-shadow 0.2s;}
+.cta-primary:hover{opacity:0.88;box-shadow:0 0 30px rgba(139,92,246,0.4);}
+.cta-secondary{font-family:'Exo 2',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.9rem 2.2rem;background:transparent;color:var(--white);
+  border:1px solid rgba(139,92,246,0.4);text-decoration:none;
+  transition:border-color 0.2s,box-shadow 0.2s;}
+.cta-secondary:hover{border-color:var(--violet-lt);box-shadow:0 0 20px rgba(139,92,246,0.25);}
+
+/* ── SECTION SHARED ── */
+.section-wrap{max-width:1060px;margin:0 auto;padding:0 2.5rem;}
+.section-header{text-align:center;padding:0 1rem 3.5rem;}
+.section-eyebrow{font-family:'Exo 2',sans-serif;font-size:0.62rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--violet);margin-bottom:0.6rem;}
+.section-title{font-family:'Orbitron',sans-serif;font-size:clamp(1.8rem,4vw,3rem);
+  letter-spacing:0.06em;color:var(--white);margin-bottom:0.5rem;line-height:1.1;}
+.neon-rule{width:60px;height:2px;margin:0.8rem auto 0;
+  background:linear-gradient(90deg,transparent,var(--violet),var(--cyan),transparent);}
+
+/* ── ALBUM SECTION ── */
+.album-section{padding:6rem 0;border-top:1px solid var(--border);}
+.album-section:nth-of-type(even){background:var(--bg2);}
+.album-layout{display:grid;grid-template-columns:320px 1fr;gap:4rem;align-items:start;}
+.album-cover{position:relative;}
+.album-cover img{width:100%;aspect-ratio:1;object-fit:cover;display:block;
+  box-shadow:0 0 80px rgba(139,92,246,0.2),0 0 40px rgba(34,211,238,0.08),0 24px 60px rgba(0,0,0,0.9);}
+.album-cover-glow{position:absolute;inset:-15px;z-index:-1;
+  background:radial-gradient(ellipse at center,rgba(139,92,246,0.15) 0%,transparent 70%);}
+.album-meta{}
+.album-badge{display:inline-block;font-family:'Exo 2',sans-serif;font-size:0.58rem;letter-spacing:0.28em;text-transform:uppercase;
+  color:var(--cyan);border:1px solid rgba(34,211,238,0.35);padding:0.25rem 0.85rem;margin-bottom:1.2rem;}
+.album-name{font-family:'Orbitron',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:0.05em;
+  color:var(--white);line-height:1.1;margin-bottom:0.4rem;}
+.album-artist{font-family:'Exo 2',sans-serif;font-size:0.68rem;letter-spacing:0.22em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:1.8rem;}
+
+/* ── TRACKLIST ── */
+.tracklist{border-top:1px solid rgba(139,92,246,0.1);}
+.track-row{display:grid;grid-template-columns:2rem 48px 1fr auto;align-items:center;gap:0.85rem;
+  padding:0.6rem 0.25rem;border-bottom:1px solid rgba(139,92,246,0.06);
+  transition:background 0.2s,padding-left 0.2s;cursor:pointer;}
+.track-row:hover{background:rgba(139,92,246,0.06);padding-left:0.75rem;}
+.track-num{font-family:'Orbitron',sans-serif;font-size:0.58rem;color:var(--muted);opacity:0.35;text-align:right;letter-spacing:0.05em;}
+.track-thumb{width:48px;height:48px;object-fit:cover;flex-shrink:0;
+  box-shadow:0 2px 10px rgba(0,0,0,0.5);}
+.track-title{font-family:'Inter',sans-serif;font-size:0.9rem;color:var(--white);letter-spacing:0.01em;}
+.track-play-btn{background:transparent;border:1px solid rgba(139,92,246,0.3);
+  color:var(--violet);width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:0.6rem;
+  cursor:pointer;transition:all 0.2s;flex-shrink:0;}
+.track-play-btn:hover{background:rgba(139,92,246,0.15);border-color:var(--violet-lt);box-shadow:0 0 10px rgba(139,92,246,0.3);}
+.track-play-btn.playing{background:rgba(139,92,246,0.2);border-color:var(--violet-lt);
+  box-shadow:0 0 15px rgba(139,92,246,0.5);color:var(--violet-lt);}
+
+/* ── FIXED PLAYER ── */
+#player{position:fixed;bottom:0;left:0;right:0;z-index:200;
+  background:rgba(5,4,14,0.98);border-top:1px solid var(--border);
+  backdrop-filter:blur(16px);display:none;align-items:center;gap:1.5rem;padding:0.75rem 2rem;}
+#player.active{display:flex;}
+#player::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--violet),var(--cyan),transparent);opacity:0.7;}
+.p-thumb{width:44px;height:44px;object-fit:cover;flex-shrink:0;box-shadow:0 0 12px rgba(139,92,246,0.4);}
+.p-info{flex:1;min-width:0;}
+.p-title{font-family:'Exo 2',sans-serif;font-size:0.92rem;font-weight:500;color:var(--white);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.p-sub{font-family:'Exo 2',sans-serif;font-size:0.62rem;letter-spacing:0.12em;color:var(--muted);}
+.p-controls{display:flex;align-items:center;gap:0.75rem;}
+.p-playbtn{width:42px;height:42px;background:var(--violet);border:none;border-radius:50%;
+  color:var(--bg);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:background 0.2s,box-shadow 0.2s;}
+.p-playbtn:hover{background:var(--violet-lt);box-shadow:0 0 20px rgba(139,92,246,0.5);}
+.p-progress{flex:1;display:flex;align-items:center;gap:0.6rem;max-width:420px;}
+.p-time{font-family:'Orbitron',sans-serif;font-size:0.62rem;color:var(--muted);min-width:2.5rem;}
+.p-bar{flex:1;height:3px;background:rgba(139,92,246,0.15);border-radius:2px;cursor:pointer;}
+.p-fill{height:100%;background:linear-gradient(90deg,var(--violet),var(--cyan));border-radius:2px;width:0%;transition:width 0.25s linear;}
+
+/* ── FOOTER ── */
+footer{padding:2rem 2.5rem;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.foot-brand{font-family:'Orbitron',sans-serif;font-size:0.72rem;letter-spacing:0.15em;color:var(--muted);}
+.foot-label a{font-family:'Exo 2',sans-serif;font-size:0.72rem;letter-spacing:0.12em;
+  color:var(--violet);text-decoration:none;transition:color 0.2s;}
+.foot-label a:hover{color:var(--violet-lt);}
+.foot-copy{font-family:'Inter',sans-serif;font-size:0.7rem;color:rgba(107,104,128,0.5);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:720px){
+  .album-layout{grid-template-columns:1fr;gap:2rem;}
+  .album-cover img{max-width:280px;margin:0 auto;}
+  nav{padding:0.75rem 1.5rem;}
+  #player{gap:0.75rem;padding:0.75rem 1rem;}
+  .p-progress{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="topnav">
+  <a href="#">
+    <img class="nav-logo" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-logo-text.png" alt="Skyline Theory">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#fade-and-fire">Fade &amp; Fire</a></li>
+    <li><a href="#bending-reality">Bending Reality</a></li>
+    <li><a href="https://hellotexasrecords.com">Label</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-aurora">
+    <div class="aurora-line"></div>
+    <div class="aurora-line"></div>
+    <div class="aurora-line"></div>
+  </div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-logo-wrap">
+      <img src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-logo.png" alt="Skyline Theory">
+    </div>
+    <p class="hero-tagline">Electronic &nbsp;&middot;&nbsp; Synth Pop &nbsp;&middot;&nbsp; Hello Texas Records</p>
+    <p class="hero-title-text">Two Albums &nbsp;&middot;&nbsp; Twenty-Four Tracks &nbsp;&middot;&nbsp; One Signal</p>
+    <div class="hero-ctas">
+      <button class="cta-primary" onclick="playTrack('betterdays')">&#9654;&nbsp; Play Better Days</button>
+      <a href="#fade-and-fire" class="cta-secondary">Explore Music</a>
+    </div>
+  </div>
+</section>
+
+<!-- ALBUM 1: FADE AND FIRE -->
+<section class="album-section" id="fade-and-fire">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-eyebrow">Album One</div>
+      <h2 class="section-title">Fade and Fire</h2>
+      <div class="neon-rule"></div>
+    </div>
+    <div class="album-layout">
+      <div class="album-cover">
+        <div class="album-cover-glow"></div>
+        <img src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-fade-and-fire-cover.png" alt="Fade and Fire">
+      </div>
+      <div class="album-meta">
+        <div class="album-badge">Full Album</div>
+        <h2 class="album-name">Fade and Fire</h2>
+        <div class="album-artist">Skyline Theory &nbsp;&middot;&nbsp; Hello Texas Records</div>
+        <div class="tracklist">
+          <div class="track-row" onclick="playTrack('wedontcomedown')">
+            <span class="track-num">01</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-we-dont-come-down-cover.png" alt=""><span class="track-title">We Don't Come Down</span>
+            <button class="track-play-btn" id="btn_wedontcomedown" onclick="event.stopPropagation();playTrack('wedontcomedown')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('pressurelines')">
+            <span class="track-num">02</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-pressure-lines-cover.png" alt=""><span class="track-title">Pressure Lines</span>
+            <button class="track-play-btn" id="btn_pressurelines" onclick="event.stopPropagation();playTrack('pressurelines')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('gravityfails')">
+            <span class="track-num">03</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-gravity-fails-cover.png" alt=""><span class="track-title">Gravity Fails</span>
+            <button class="track-play-btn" id="btn_gravityfails" onclick="event.stopPropagation();playTrack('gravityfails')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('runthroughfire')">
+            <span class="track-num">04</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-run-through-fire-cover.png" alt=""><span class="track-title">Run Through Fire</span>
+            <button class="track-play-btn" id="btn_runthroughfire" onclick="event.stopPropagation();playTrack('runthroughfire')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('stayinthesound')">
+            <span class="track-num">05</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-stay-in-the-sound-cover.png" alt=""><span class="track-title">Stay in the Sound</span>
+            <button class="track-play-btn" id="btn_stayinthesound" onclick="event.stopPropagation();playTrack('stayinthesound')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('echointhedark')">
+            <span class="track-num">06</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-echoes-in-the-dark-cover.png" alt=""><span class="track-title">Echo in the Dark</span>
+            <button class="track-play-btn" id="btn_echointhedark" onclick="event.stopPropagation();playTrack('echointhedark')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('breakthepattern')">
+            <span class="track-num">07</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-break-the-pattern-cover.png" alt=""><span class="track-title">Break the Pattern</span>
+            <button class="track-play-btn" id="btn_breakthepattern" onclick="event.stopPropagation();playTrack('breakthepattern')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('higherthanair')">
+            <span class="track-num">08</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-higher-than-air-cover.png" alt=""><span class="track-title">Higher Than Air</span>
+            <button class="track-play-btn" id="btn_higherthanair" onclick="event.stopPropagation();playTrack('higherthanair')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('nowayback')">
+            <span class="track-num">09</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-no-way-back-cover.png" alt=""><span class="track-title">No Way Back</span>
+            <button class="track-play-btn" id="btn_nowayback" onclick="event.stopPropagation();playTrack('nowayback')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('fadinglight')">
+            <span class="track-num">10</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-fading-lights-cover.png" alt=""><span class="track-title">Fading Light</span>
+            <button class="track-play-btn" id="btn_fadinglight" onclick="event.stopPropagation();playTrack('fadinglight')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('holdthemoment')">
+            <span class="track-num">11</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-hold-the-moment-cover.png" alt=""><span class="track-title">Hold the Moment</span>
+            <button class="track-play-btn" id="btn_holdthemoment" onclick="event.stopPropagation();playTrack('holdthemoment')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('untilthesilence')">
+            <span class="track-num">12</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-until-the-silence-ends-cover.png" alt=""><span class="track-title">Until the Silence Ends</span>
+            <button class="track-play-btn" id="btn_untilthesilence" onclick="event.stopPropagation();playTrack('untilthesilence')">&#9654;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALBUM 2: BENDING REALITY -->
+<section class="album-section" id="bending-reality">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="section-eyebrow">Album Two</div>
+      <h2 class="section-title">Bending Reality</h2>
+      <div class="neon-rule"></div>
+    </div>
+    <div class="album-layout">
+      <div class="album-cover">
+        <div class="album-cover-glow"></div>
+        <img src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-bending-reality-cover.png" alt="Bending Reality">
+      </div>
+      <div class="album-meta">
+        <div class="album-badge">Full Album</div>
+        <h2 class="album-name">Bending Reality</h2>
+        <div class="album-artist">Skyline Theory &nbsp;&middot;&nbsp; Hello Texas Records</div>
+        <div class="tracklist">
+          <div class="track-row" onclick="playTrack('openroads')">
+            <span class="track-num">01</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-open-roads-and-broken-nights-cover.png" alt=""><span class="track-title">Open Roads &amp; Broken Nights</span>
+            <button class="track-play-btn" id="btn_openroads" onclick="event.stopPropagation();playTrack('openroads')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('heartslikethese')">
+            <span class="track-num">02</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-hearts-like-these-cover.png" alt=""><span class="track-title">Hearts Like These</span>
+            <button class="track-play-btn" id="btn_heartslikethese" onclick="event.stopPropagation();playTrack('heartslikethese')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('chasingthefeeling')">
+            <span class="track-num">03</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-chasing-the-feeling-cover.png" alt=""><span class="track-title">Chasing the Feeling</span>
+            <button class="track-play-btn" id="btn_chasingthefeeling" onclick="event.stopPropagation();playTrack('chasingthefeeling')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('letitrunwild')">
+            <span class="track-num">04</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-let-it-run-wild-cover.png" alt=""><span class="track-title">Let It Run Wild</span>
+            <button class="track-play-btn" id="btn_letitrunwild" onclick="event.stopPropagation();playTrack('letitrunwild')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('whenwewerefree')">
+            <span class="track-num">05</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-when-we-were-free-cover.png" alt=""><span class="track-title">When We Were Free</span>
+            <button class="track-play-btn" id="btn_whenwewerefree" onclick="event.stopPropagation();playTrack('whenwewerefree')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('fallingintolight')">
+            <span class="track-num">06</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-falling-into-light-cover.png" alt=""><span class="track-title">Falling into Light</span>
+            <button class="track-play-btn" id="btn_fallingintolight" onclick="event.stopPropagation();playTrack('fallingintolight')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('somethingchanged')">
+            <span class="track-num">07</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-something-changed-cover.png" alt=""><span class="track-title">Something Changed</span>
+            <button class="track-play-btn" id="btn_somethingchanged" onclick="event.stopPropagation();playTrack('somethingchanged')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('stayuntilsunrise')">
+            <span class="track-num">08</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-stay-until-sunrise-cover.png" alt=""><span class="track-title">Stay Until Sunrise</span>
+            <button class="track-play-btn" id="btn_stayuntilsunrise" onclick="event.stopPropagation();playTrack('stayuntilsunrise')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('ghostsinthemirror')">
+            <span class="track-num">09</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-ghost-in-the-mirror-cover.png" alt=""><span class="track-title">Ghosts in the Mirror</span>
+            <button class="track-play-btn" id="btn_ghostsinthemirror" onclick="event.stopPropagation();playTrack('ghostsinthemirror')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('betterdays')">
+            <span class="track-num">10</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-better-days-cover.png" alt=""><span class="track-title">Better Days</span>
+            <button class="track-play-btn" id="btn_betterdays" onclick="event.stopPropagation();playTrack('betterdays')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('carrymethrough')">
+            <span class="track-num">11</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-carry-me-through-cover.png" alt=""><span class="track-title">Carry Me Through</span>
+            <button class="track-play-btn" id="btn_carrymethrough" onclick="event.stopPropagation();playTrack('carrymethrough')">&#9654;</button>
+          </div>
+          <div class="track-row" onclick="playTrack('whentheworldgoesquiet')">
+            <span class="track-num">12</span><img class="track-thumb" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-when-the-world-goes-quiet-cover.png" alt=""><span class="track-title">When the World Goes Quiet</span>
+            <button class="track-play-btn" id="btn_whentheworldgoesquiet" onclick="event.stopPropagation();playTrack('whentheworldgoesquiet')">&#9654;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIXED PLAYER -->
+<div id="player">
+  <img class="p-thumb" id="p-thumb" src="" alt="">
+  <div class="p-info">
+    <div class="p-title" id="p-title">—</div>
+    <div class="p-sub" id="p-sub">Skyline Theory</div>
+  </div>
+  <div class="p-controls">
+    <button class="p-playbtn" id="p-playbtn" onclick="togglePlay()">&#9654;</button>
+  </div>
+  <div class="p-progress">
+    <span class="p-time" id="p-cur">0:00</span>
+    <div class="p-bar" id="p-bar" onclick="seekTo(event)">
+      <div class="p-fill" id="p-fill"></div>
+    </div>
+    <span class="p-time" id="p-dur">0:00</span>
+  </div>
+</div>
+
+<audio id="audio"></audio>
+
+<!-- FOOTER -->
+<footer>
+  <span class="foot-brand">Skyline Theory</span>
+  <span class="foot-label"><a href="https://hellotexasrecords.com">Hello Texas Records &#8599;</a></span>
+  <span class="foot-copy">&copy; 2024 Hello Texas Records. All rights reserved.</span>
+</footer>
+
+<script>
+const BASE = 'https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/';
+
+const TRACKS = {
+  // Album 1 — Fade and Fire
+  wedontcomedown:        { title:"We Don't Come Down",      sub:'Fade and Fire',   src:'https://www.dropbox.com/scl/fi/cf371yd6vj0a6ceaibi75/We-Don-t-Come-Down-Mastered-MP3.mp3?rlkey=po0zerdjt6hsqqi8nx2bcn8oe&raw=1',        thumb:BASE+'skyline-theory-we-dont-come-down-cover.png' },
+  pressurelines:         { title:'Pressure Lines',          sub:'Fade and Fire',   src:'https://www.dropbox.com/scl/fi/s4judoqv3lqk86y2vgxnp/Pressure-Lines-Mastered-MP3.mp3?rlkey=8dj2r8hrpuilas66f6dic16l4&raw=1',           thumb:BASE+'skyline-theory-pressure-lines-cover.png' },
+  gravityfails:          { title:'Gravity Fails',           sub:'Fade and Fire',   src:'https://www.dropbox.com/scl/fi/jmt4fg3momehpr9e7ysou/Gravity-Fails-Mastered-MP3.mp3?rlkey=rvnqt63h336fqg6k341q8leo5&raw=1',              thumb:BASE+'skyline-theory-gravity-fails-cover.png' },
+  runthroughfire:        { title:'Run Through Fire',        sub:'Fade and Fire',   src:'https://www.dropbox.com/scl/fi/iqbbuzeje60lwbz58h70z/RUN-THROUGH-FIRE-Mastered-MP3.mp3?rlkey=ni4zvb7889a5bm20jjusug04a&raw=1',           thumb:BASE+'skyline-theory-run-through-fire-cover.png' },
+  stayinthesound:        { title:'Stay in the Sound',       sub:'Fade and Fire',   src:'https://www.dropbox.com/scl/fi/dmekf7w0w339ed8v90vbj/Stay-in-the-Sound-Mastered-MP3.mp3?rlkey=0n7llm4gd9iavlgmzyzpami2o&raw=1',          thumb:BASE+'skyline-theory-stay-in-the-sound-cover.png' },
+  echointhedark:         { title:'Echo in the Dark',        sub:'Fade and Fire',   src:'https://www.dropbox.com/scl/fi/5ri1mxzf4f1kwapm9tpwg/Echoes-in-the-Dark-Mastered-MP3.mp3?rlkey=5w8jirjh4er9n8s16cpkbbjgj&raw=1',         thumb:BASE+'skyline-theory-echoes-in-the-dark-cover.png' },
+  breakthepattern:       { title:'Break the Pattern',       sub:'Fade and Fire',   src:'https://www.dropbox.com/scl/fi/bc5zptbxmkzmkja81fyrp/Break-the-Pattern-Mastered-MP3.mp3?rlkey=ndrmbr27fuxkgxz3gzw9qenx7&raw=1',          thumb:BASE+'skyline-theory-break-the-pattern-cover.png' },
+  higherthanair:         { title:'Higher Than Air',         sub:'Fade and Fire',   src:'https://www.dropbox.com/scl/fi/bkzk9bv62pjyr2wcxebz9/Higher-Than-Air-Mastered-MP3.mp3?rlkey=fywhtj4cc5x5fsgcikjkq1hxh&raw=1',            thumb:BASE+'skyline-theory-higher-than-air-cover.png' },
+  nowayback:             { title:'No Way Back',             sub:'Fade and Fire',   src:'https://www.dropbox.com/scl/fi/n0sj7pyy3uh8u1ebcncpe/No-Way-Back-Version-1-Mastered-MP3.mp3?rlkey=db1zdawqwh3q2o2lrkt41lmxc&raw=1',      thumb:BASE+'skyline-theory-no-way-back-cover.png' },
+  fadinglight:           { title:'Fading Light',            sub:'Fade and Fire',   src:'https://www.dropbox.com/scl/fi/qswtou26gsdde3ktg1au3/Fading-Lights-Mastered-MP3.mp3?rlkey=zvlcargx56a300lj66b3xtmqr&raw=1',              thumb:BASE+'skyline-theory-fading-lights-cover.png' },
+  holdthemoment:         { title:'Hold the Moment',         sub:'Fade and Fire',   src:'https://www.dropbox.com/scl/fi/b09n326wriilke4srgfyd/Hold-The-Moment-Mastered-MP3.mp3?rlkey=gpzbmy5rnhze194qtj9k39u48&raw=1',             thumb:BASE+'skyline-theory-hold-the-moment-cover.png' },
+  untilthesilence:       { title:'Until the Silence Ends',  sub:'Fade and Fire',   src:'https://www.dropbox.com/scl/fi/hmxydsbtv5aog0ax4ygvl/Until-the-Silence-Ends-Mastered-MP3.mp3?rlkey=3iuanpek36nw7ojy36codfurd&raw=1',     thumb:BASE+'skyline-theory-until-the-silence-ends-cover.png' },
+  // Album 2 — Bending Reality
+  openroads:             { title:'Open Roads & Broken Nights', sub:'Bending Reality', src:'https://www.dropbox.com/scl/fi/j81kze0dobhx0bwvq2fex/Open-Roads-and-Broken-Nights-Mastered-MP3.mp3?rlkey=nkd1tu3jigpaxul0g3ev9b298&raw=1', thumb:BASE+'skyline-theory-open-roads-and-broken-nights-cover.png' },
+  heartslikethese:       { title:'Hearts Like These',       sub:'Bending Reality', src:'https://www.dropbox.com/scl/fi/jnc1hwryvxnn9ig39qj83/Hearts-Like-These-Mastered-MP3.mp3?rlkey=ols47o4xjq5fnr5j3q8gch1pd&raw=1',            thumb:BASE+'skyline-theory-hearts-like-these-cover.png' },
+  chasingthefeeling:     { title:'Chasing the Feeling',     sub:'Bending Reality', src:'https://www.dropbox.com/scl/fi/rf2b5n4v025r61qmyozyb/Chasing-the-Feeling-Mastered-MP3.mp3?rlkey=32ycuwzvkn5bboqfa1f8n3ind&raw=1',          thumb:BASE+'skyline-theory-chasing-the-feeling-cover.png' },
+  letitrunwild:          { title:'Let It Run Wild',         sub:'Bending Reality', src:'https://www.dropbox.com/scl/fi/jygt99ycvv6q3za7fvf6b/Let-It-Run-Wild-Mastered-MP3.mp3?rlkey=wqpojgnj9o7k6jda4b6n2xaie&raw=1',              thumb:BASE+'skyline-theory-let-it-run-wild-cover.png' },
+  whenwewerefree:        { title:'When We Were Free',       sub:'Bending Reality', src:'https://www.dropbox.com/scl/fi/xq0holiud29e1xl4g2lfx/When-We-Were-Free-Mastered-MP3.mp3?rlkey=2bt1rj8w6jedx9zxet0795aal&raw=1',            thumb:BASE+'skyline-theory-when-we-were-free-cover.png' },
+  fallingintolight:      { title:'Falling into Light',      sub:'Bending Reality', src:'https://www.dropbox.com/scl/fi/kzxdn6bj7zc6qxo98wux9/Falling-into-Light-Mastered-MP3.mp3?rlkey=ca1dj1hpad4ij7d9q5axc61s7&raw=1',           thumb:BASE+'skyline-theory-falling-into-light-cover.png' },
+  somethingchanged:      { title:'Something Changed',       sub:'Bending Reality', src:'https://www.dropbox.com/scl/fi/b2is84twk2m27r92leawc/Something-Changed-Mastered-MP3.mp3?rlkey=m3vcr7aav3xkipzeonidffu47&raw=1',            thumb:BASE+'skyline-theory-something-changed-cover.png' },
+  stayuntilsunrise:      { title:'Stay Until Sunrise',      sub:'Bending Reality', src:'https://www.dropbox.com/scl/fi/qc81lnaca2sqfk9jm3w4q/Stay-Until-the-Sunrise-Mastered-MP3.mp3?rlkey=x0xgwsrbncl2uxuf8wfdqnlnr&raw=1',     thumb:BASE+'skyline-theory-stay-until-sunrise-cover.png' },
+  ghostsinthemirror:     { title:'Ghosts in the Mirror',    sub:'Bending Reality', src:'https://www.dropbox.com/scl/fi/rovyotb7fqng0oglnxtmh/Ghost-in-the-Mirror-Version-1-Mastered-MP3.mp3?rlkey=4mpo9nkq7tfez599nw5l9ki6e&raw=1', thumb:BASE+'skyline-theory-ghost-in-the-mirror-cover.png' },
+  betterdays:            { title:'Better Days',             sub:'Bending Reality', src:'https://www.dropbox.com/scl/fi/xcx0ccgoi724r260ncnie/Better-Days-Mastered-MP3.mp3?rlkey=jj1dzzodynmvs1jjjqa4tcbhl&raw=1',                   thumb:BASE+'skyline-theory-better-days-cover.png' },
+  carrymethrough:        { title:'Carry Me Through',        sub:'Bending Reality', src:'https://www.dropbox.com/scl/fi/z6qhx1fejz3pg26as4s48/Carry-Me-Through-Version-1-Mastered-MP3.mp3?rlkey=r8hydqxxixzcayuke10swtkov&raw=1',  thumb:BASE+'skyline-theory-carry-me-through-cover.png' },
+  whentheworldgoesquiet: { title:'When the World Goes Quiet', sub:'Bending Reality', src:'https://www.dropbox.com/scl/fi/nc9vds0ee7bvr29wtdj7k/When-the-World-Goes-Quiet-Mastered-MP3.mp3?rlkey=7srnvab42k2xdandp2a7j224j&raw=1', thumb:BASE+'skyline-theory-when-the-world-goes-quiet-cover.png' }
+};
+
+let currentId=null, isPlaying=false;
+const audio=document.getElementById('audio');
+const player=document.getElementById('player');
+
+function fmtTime(s){ if(isNaN(s)) return '0:00'; return Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0'); }
+
+function playTrack(id){
+  const t=TRACKS[id]; if(!t) return;
+  if(currentId===id){ togglePlay(); return; }
+  currentId=id; audio.src=t.src; audio.play(); isPlaying=true;
+  document.getElementById('p-thumb').src=t.thumb;
+  document.getElementById('p-title').textContent=t.title;
+  document.getElementById('p-sub').textContent=t.sub;
+  document.getElementById('p-playbtn').innerHTML='&#9646;&#9646;';
+  player.classList.add('active');
+  document.querySelectorAll('.track-play-btn').forEach(b=>b.classList.remove('playing'));
+  const btn=document.getElementById('btn_'+id);
+  if(btn) btn.classList.add('playing');
+}
+
+function togglePlay(){
+  if(isPlaying){ audio.pause(); isPlaying=false; document.getElementById('p-playbtn').innerHTML='&#9654;'; }
+  else { audio.play(); isPlaying=true; document.getElementById('p-playbtn').innerHTML='&#9646;&#9646;'; }
+}
+
+function seekTo(e){
+  const bar=document.getElementById('p-bar');
+  audio.currentTime=(e.offsetX/bar.offsetWidth)*audio.duration;
+}
+
+audio.addEventListener('timeupdate',()=>{
+  if(!audio.duration) return;
+  document.getElementById('p-fill').style.width=((audio.currentTime/audio.duration)*100)+'%';
+  document.getElementById('p-cur').textContent=fmtTime(audio.currentTime);
+  document.getElementById('p-dur').textContent=fmtTime(audio.duration);
+});
+
+audio.addEventListener('ended',()=>{
+  isPlaying=false; document.getElementById('p-playbtn').innerHTML='&#9654;';
+  document.querySelectorAll('.track-play-btn').forEach(b=>b.classList.remove('playing'));
+});
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('topnav').classList.toggle('scrolled', window.scrollY>60);
+});
+</script>
+</body>
+</html>
