@@ -1,6 +1,13 @@
 {
   "artist": "Skyline Theory",
   "latestUrl": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/latest.json",
+  "featuredTrack": {
+    "title": "When the World Goes Quiet",
+    "artist": "Skyline Theory",
+    "album": "Bending Reality",
+    "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/covers/skyline-theory-when-the-world-goes-quiet-cover.png",
+    "audioSrc": "https://www.dropbox.com/scl/fi/nc9vds0ee7bvr29wtdj7k/When-the-World-Goes-Quiet-Mastered-MP3.mp3?rlkey=7srnvab42k2xdandp2a7j224j&raw=1"
+  },
   "tracks": [
     {
       "title": "We Don't Come Down",
@@ -99,7 +106,7 @@
       "audioSrc": "https://www.dropbox.com/scl/fi/jygt99ycvv6q3za7fvf6b/Let-It-Run-Wild-Mastered-MP3.mp3?rlkey=wqpojgnj9o7k6jda4b6n2xaie&raw=1"
     },
     {
-      "title": "When We were Free",
+      "title": "When We Were Free",
       "album": "Bending Reality",
       "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/covers/skyline-theory-when-we-were-free-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/xq0holiud29e1xl4g2lfx/When-We-Were-Free-Mastered-MP3.mp3?rlkey=2bt1rj8w6jedx9zxet0795aal&raw=1"
@@ -139,12 +146,6 @@
       "album": "Bending Reality",
       "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/covers/skyline-theory-carry-me-through-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/z6qhx1fejz3pg26as4s48/Carry-Me-Through-Version-1-Mastered-MP3.mp3?rlkey=r8hydqxxixzcayuke10swtkov&raw=1"
-    },
-    {
-      "title": "When the World Goes Quiet",
-      "album": "Bending Reality",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/covers/skyline-theory-when-the-world-goes-quiet-cover.png",
-      "audioSrc": "https://www.dropbox.com/scl/fi/nc9vds0ee7bvr29wtdj7k/When-the-World-Goes-Quiet-Mastered-MP3.mp3?rlkey=7srnvab42k2xdandp2a7j224j&raw=1"
     }
   ]
 }
