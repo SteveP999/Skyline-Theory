@@ -118,6 +118,19 @@ footer{background:var(--black);border-top:1px solid var(--cyan-glow);padding:4re
 .foot-links a{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--mist);text-decoration:none;opacity:0.4;transition:opacity 0.2s,color 0.2s;}
 .foot-links a:hover{opacity:1;color:var(--cyan-lt);}
 .loading-ph{text-align:center;padding:3rem;color:var(--mist);font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;}
+
+#latest-video{background:var(--ink);padding:5rem 0;border-top:1px solid var(--cyan-glow);}
+.video-inner{max-width:1040px;margin:0 auto;padding:0 2.5rem;}
+.video-placeholder{border:1px solid rgba(111,211,255,0.25);padding:5rem 2rem;text-align:center;color:var(--mist);text-transform:uppercase;letter-spacing:.2em;background:rgba(111,211,255,0.04);}
+.album-tracks-wrap{max-width:1040px;margin:2.5rem auto 0;padding:0 2.5rem;}
+.album-tracks-title{font-family:'Rajdhani',sans-serif;font-size:1.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white);margin-bottom:1rem;}
+.album-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem;}
+.song-card img{width:100%;aspect-ratio:1;object-fit:cover;display:block;filter:brightness(.85);transition:transform .25s,filter .25s;}
+.song-card:hover img{transform:scale(1.02);filter:brightness(1);}
+.song-card h4{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--white);margin-top:.5rem;}
+.song-card p{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);}
+.video-pill{display:inline-block;margin-top:.35rem;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(111,211,255,0.35);padding:.15rem .45rem;text-decoration:none;}
+
 @media(max-width:768px){
   .album-layout,.album-layout.reverse{grid-template-columns:1fr;direction:ltr;gap:2rem;}
   .album-cover{max-width:300px;margin:0 auto;}
@@ -131,22 +144,22 @@ footer{background:var(--black);border-top:1px solid var(--cyan-glow);padding:4re
 </head>
 <body>
 <nav id="topnav">
-  <img class="nav-logo" src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-logo-text.png" alt="Skyline Theory">
+  <img class="nav-logo" src="images/logos/skyline-theory-logo-text.png" alt="Skyline Theory">
   <ul class="nav-links">
     <li><a href="#bio">About</a></li>
     <li><a href="#albums">Music</a></li>
-    <li><a href="#singles">Singles</a></li>
+    
     <li><a href="https://skyline-theory.hellotexasrecords.com" target="_blank" style="opacity:0.45;font-size:0.62rem;">Hello Texas Records</a></li>
   </ul>
 </nav>
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/covers/skyline-theory-bending-reality-ALBUM-cover.png');"></div>
+  <div class="hero-bg" style="background-image:url('images/covers/skyline-theory-bending-reality-ALBUM-cover.png');"></div>
   <div class="hero-vignette"></div>
   <div class="hero-glow"></div>
   <div class="hero-content">
     <div class="hero-label">Hello Texas Records</div>
     <div class="hero-logo-wrap">
-      <img src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-logo-text.png" alt="Skyline Theory">
+      <img src="images/logos/skyline-theory-logo-text.png" alt="Skyline Theory">
     </div>
     <p class="hero-tagline">Neon nights. Open roads.<br>No gravity.</p>
     <div class="hero-ctas">
@@ -182,17 +195,22 @@ footer{background:var(--black);border-top:1px solid var(--cyan-glow);padding:4re
     </div>
   </div>
 </section>
-<div id="albums"><div class="loading-ph" id="albums-loading">Loading music…</div></div>
-<section id="singles">
+
+<section id="latest-video">
   <div class="section-header">
-    <div class="section-eyebrow">Singles</div>
-    <h2 class="section-title">All Tracks</h2>
+    <div class="section-eyebrow">Latest Video</div>
+    <h2 class="section-title">Stay in the Sound</h2>
     <div class="cyan-rule"></div>
   </div>
-  <div class="singles-grid" id="singles-grid"><div class="loading-ph">Loading…</div></div>
+  <div class="video-inner">
+    <div class="video-placeholder">Video Coming Soon</div>
+  </div>
 </section>
+
+<div id="albums"><div class="loading-ph" id="albums-loading">Loading music…</div></div>
+
 <footer>
-  <img src="https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/skyline-theory-logo-text.png" alt="Skyline Theory" class="foot-logo">
+  <img src="images/logos/skyline-theory-logo-text.png" alt="Skyline Theory" class="foot-logo">
   <div class="foot-label">Hello Texas Records</div>
   <div class="foot-links">
     <a href="#" target="_blank">Spotify</a>
@@ -226,9 +244,8 @@ footer{background:var(--black);border-top:1px solid var(--cyan-glow);padding:4re
   </div>
 </div>
 <script>
-const ARTIST='Skyline Theory',REPO='Skyline-Theory';
-const BASE=`https://raw.githubusercontent.com/SteveP999/${REPO}/main`;
-const SONGS_URL=`${BASE}/songs.json`,LATEST_URL=`${BASE}/latest.json`;
+const ARTIST='Skyline Theory';
+const SONGS_URL='songs.json',LATEST_URL='latest.json';
 let SONGS=[],ORDER=[],cur=null;
 const audio=document.getElementById('audio'),player=document.getElementById('player'),pThumb=document.getElementById('p-thumb');
 function fmt(s){if(!isFinite(s)||isNaN(s))return'0:00';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec<10?'0':'')+sec;}
@@ -261,6 +278,13 @@ document.getElementById('p-next').addEventListener('click',()=>{if(!cur||!ORDER.
 document.getElementById('p-bar').addEventListener('click',e=>{if(!audio.duration)return;const r=e.currentTarget.getBoundingClientRect();audio.currentTime=((e.clientX-r.left)/r.width)*audio.duration;});
 document.getElementById('p-vol').addEventListener('input',e=>{audio.volume=+e.target.value;});
 document.getElementById('p-close').addEventListener('click',()=>{audio.pause();player.classList.remove('visible');setTimeout(()=>{player.style.display='none';},350);setAllBtns(cur,false);cur=null;});
+
+function videoButton(song){
+  if(song.videos&&song.videos.length){
+    return `<a class="video-pill" href="${song.videos[0].youtube}" target="_blank">Watch Video</a>`;
+  }
+  return `<span class="video-pill">Video Coming Soon</span>`;
+}
 function buildAlbums(songs){
   const map=new Map();songs.forEach(s=>{if(!map.has(s.album))map.set(s.album,[]);map.get(s.album).push(s);});
   const container=document.getElementById('albums');container.innerHTML='';
@@ -283,10 +307,22 @@ function buildAlbums(songs){
           </div>`).join('')}
         </div>
       </div>
+    </div>
+    <div class="album-tracks-wrap">
+      <h3 class="album-tracks-title">Album Tracks</h3>
+      <div class="album-cards">
+        ${tracks.map(t=>`<div class="song-card">
+          <img src="${t.cover}" alt="${t.title}" loading="lazy" onclick="playById('${t.id}')">
+          <h4>${t.title}</h4>
+          <p>${t.album}</p>
+          ${videoButton(t)}
+        </div>`).join('')}
+      </div>
     </div>`;
     container.appendChild(sec);i++;
   });
 }
+
 function buildSingles(songs){
   document.getElementById('singles-grid').innerHTML=songs.map(s=>`
     <div class="single-card" onclick="playById('${s.id}')">
@@ -313,7 +349,7 @@ async function init(){
   try{
     const res=await fetch(`${SONGS_URL}?cb=${Date.now()}`);
     SONGS=await res.json();ORDER=SONGS.map(s=>s.id);
-    buildAlbums(SONGS);buildSingles(SONGS);
+    buildAlbums(SONGS);
     const latest=SONGS.find(s=>s.isLatest)||SONGS[SONGS.length-1];
     updateLatest(latest);
     try{const lr=await fetch(`${LATEST_URL}?cb=${Date.now()}`);const ld=await lr.json();if(ld.title){const m=SONGS.find(s=>s.title===ld.title);if(m)updateLatest(m);}}catch(e){}
