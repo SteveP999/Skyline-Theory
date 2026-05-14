@@ -112,6 +112,5 @@ catch {
 }
 finally {
     Write-Host ""
-    Write-Host "Returning to HTR-MENU..."
-    exit 0
+    Read-Host "Press Enter to close"
 }
