@@ -1,26 +1,29 @@
 [
   {
     "id": "skyline-theory-stay-in-the-sound",
-    "artistId": "skyline-theory",
-    "artist": "Skyline Theory",
+    "num": "01",
     "title": "Stay in the Sound",
+    "artist": "Skyline Theory",
     "album": "Bending Reality",
-    "genre": "EDM / Progressive House",
-    "releaseType": "single",
-    "releaseDate": "2026-05-07",
-    "coverImage": "skyline-theory-stay-in-the-sound-cover.png",
-    "audioFile": "",
-    "youtubeUrl": "",
-    "featured": true,
-    "explicit": false,
+    "trackNumber": 1,
+    "albumOrder": 1,
+    "albumSortOrder": 9999,
+    "sourceOrder": 1,
+    "albumCover": "images/covers/skyline-theory-bending-reality-ALBUM-cover.png",
+    "type": "single",
+    "isLatest": true,
+    "cover": "images/covers/skyline-theory-stay-in-the-sound-cover.png",
+    "audio": "",
+    "audioSrc": "",
+    "videos": [],
     "includeOnRadio": true,
     "includeOnHomepage": true,
+    "explicit": false,
     "tags": [
       "edm",
       "festival",
       "uplifting",
       "nostalgic"
-    ],
-    "videos": []
+    ]
   }
 ]

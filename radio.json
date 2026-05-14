@@ -1,10 +1,13 @@
 {
   "artist": "Skyline Theory",
-  "latestUrl": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/latest.json",
+  "latestUrl": "latest.json",
   "featuredTrack": {
     "title": "Stay in the Sound",
     "artist": "Skyline Theory",
-    "album": "Bending Reality"
+    "album": "Bending Reality",
+    "cover": "images/covers/skyline-theory-stay-in-the-sound-cover.png",
+    "audioSrc": "",
+    "videos": []
   },
   "tracks": []
 }

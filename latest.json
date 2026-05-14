@@ -2,5 +2,10 @@
   "title": "Stay in the Sound",
   "artist": "Skyline Theory",
   "album": "Bending Reality",
-  "type": "Latest Single"
+  "type": "Latest Single",
+  "cover": "images/covers/skyline-theory-stay-in-the-sound-cover.png",
+  "image": "images/covers/skyline-theory-stay-in-the-sound-cover.png",
+  "audio": "",
+  "audioSrc": "",
+  "videos": []
 }

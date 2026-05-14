@@ -1,0 +1,10 @@
+{
+  "name": "Skyline Theory",
+  "short_name": "Skyline Theo",
+  "description": "Skyline Theory on Hello Texas Records",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#090806",
+  "theme_color": "#d49a25",
+  "icons": []
+}
