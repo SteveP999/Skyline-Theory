@@ -2,12 +2,109 @@
   "artist": "Skyline Theory",
   "latestUrl": "latest.json",
   "featuredTrack": {
-    "title": "Stay in the Sound",
+    "title": "When We Were Free",
     "artist": "Skyline Theory",
     "album": "Bending Reality",
-    "cover": "images/covers/skyline-theory-stay-in-the-sound-cover.png",
-    "audioSrc": "",
+    "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-when-we-were-free-cover.png",
+    "audioSrc": "https://www.dropbox.com/scl/fi/ly7j3ckfar207g2s0qizi/When-We-Were-Free-Mastered-MP3.mp3?rlkey=eipwfp09qtq615bcys791l5el&raw=1",
     "videos": []
   },
-  "tracks": []
+  "tracks": [
+    {
+      "title": "Better Days",
+      "artist": "Skyline Theory",
+      "album": "Bending Reality",
+      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-better-days-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/yfg3ebeoyoigfdl8bopxm/Better-Days-Mastered-MP3.mp3?rlkey=ifbiooenl92q31cuxipi8chat&raw=1",
+      "videos": []
+    },
+    {
+      "title": "Carry Me Through",
+      "artist": "Skyline Theory",
+      "album": "Bending Reality",
+      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-carry-me-through-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/69dnig1368tmjl46pgufw/Carry-Me-Through-Version-1-Mastered-MP3.mp3?rlkey=ipj07k45a62owdrs10u632hvg&raw=1",
+      "videos": []
+    },
+    {
+      "title": "Chasing the Feeling",
+      "artist": "Skyline Theory",
+      "album": "Bending Reality",
+      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-chasing-the-feeling-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/tpapydw0e3f10hpmljq2w/Chasing-the-Feeling-Mastered-MP3.mp3?rlkey=f79tydtis9c8ltd1kfly8foyz&raw=1",
+      "videos": []
+    },
+    {
+      "title": "Falling Into Light",
+      "artist": "Skyline Theory",
+      "album": "Bending Reality",
+      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-falling-into-light-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/5b1oko8hic2k1j629qhhn/Falling-into-Light-Mastered-MP3.mp3?rlkey=8so4qtnrirb6hkxa01w7bj1dd&raw=1",
+      "videos": []
+    },
+    {
+      "title": "Ghost in The Mirror",
+      "artist": "Skyline Theory",
+      "album": "Bending Reality",
+      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-ghost-in-the-mirror-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/tqvt6k6i1lfpaa7a1erot/Ghost-in-the-Mirror-Version-2-Mastered-MP3.mp3?rlkey=3ixn0y0xq4incwrdst4y6szcu&raw=1",
+      "videos": []
+    },
+    {
+      "title": "Hearts Like These",
+      "artist": "Skyline Theory",
+      "album": "Bending Reality",
+      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-hearts-like-these-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/6fvcx28c1md1453x9gkuy/Hearts-Like-These-Mastered-MP3.mp3?rlkey=m8c05tr1k3vm0af3vr86s2t3m&raw=1",
+      "videos": []
+    },
+    {
+      "title": "Let It Run Wild",
+      "artist": "Skyline Theory",
+      "album": "Bending Reality",
+      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-let-it-run-wild-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/dhob21tq6d8zwaros8onj/Let-It-Run-Wild-Mastered-MP3.mp3?rlkey=2t1f15c1lz7a95mfuzyh6vfmj&raw=1",
+      "videos": []
+    },
+    {
+      "title": "Open Roads and Broken Nights",
+      "artist": "Skyline Theory",
+      "album": "Bending Reality",
+      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-open-roads-and-broken-nights-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/3m3vud26fg49rzr471g83/Open-Roads-and-Broken-Nights-Mastered-MP3.mp3?rlkey=lv3jmtjkvqhlj3jln42kh31yw&raw=1",
+      "videos": []
+    },
+    {
+      "title": "Something Changed",
+      "artist": "Skyline Theory",
+      "album": "Bending Reality",
+      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-something-changed-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/vtb9bd6hjqkwyw2e46wyi/Something-Changed-Mastered-MP3.mp3?rlkey=oenb5eh0vr94orttp7dqidcc6&raw=1",
+      "videos": []
+    },
+    {
+      "title": "Stay Until the Sunrise",
+      "artist": "Skyline Theory",
+      "album": "Bending Reality",
+      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-stay-until-the-sunrise-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/d9kw1lj5bxkax9uqapdik/Stay-Until-the-Sunrise-Mastered-MP3.mp3?rlkey=86xqp27garczvvae3hzjefr6g&raw=1",
+      "videos": []
+    },
+    {
+      "title": "When We Were Free",
+      "artist": "Skyline Theory",
+      "album": "Bending Reality",
+      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-when-we-were-free-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/ly7j3ckfar207g2s0qizi/When-We-Were-Free-Mastered-MP3.mp3?rlkey=eipwfp09qtq615bcys791l5el&raw=1",
+      "videos": []
+    },
+    {
+      "title": "When the World Goes Quiet",
+      "artist": "Skyline Theory",
+      "album": "Bending Reality",
+      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-when-the-world-goes-quiet-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/xqh31ctegva6e64k0st5y/When-the-World-Goes-Quiet-Mastered-MP3.mp3?rlkey=xebvgptkrfgfxx3fki02hv6od&raw=1",
+      "videos": []
+    }
+  ]
 }

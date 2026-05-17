@@ -1,11 +1,11 @@
 {
-  "title": "Stay in the Sound",
+  "title": "When We Were Free",
   "artist": "Skyline Theory",
   "album": "Bending Reality",
   "type": "Latest Single",
-  "cover": "images/covers/skyline-theory-stay-in-the-sound-cover.png",
-  "image": "images/covers/skyline-theory-stay-in-the-sound-cover.png",
-  "audio": "",
-  "audioSrc": "",
+  "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-when-we-were-free-cover.png",
+  "image": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-when-we-were-free-cover.png",
+  "audio": "https://www.dropbox.com/scl/fi/ly7j3ckfar207g2s0qizi/When-We-Were-Free-Mastered-MP3.mp3?rlkey=eipwfp09qtq615bcys791l5el&raw=1",
+  "audioSrc": "https://www.dropbox.com/scl/fi/ly7j3ckfar207g2s0qizi/When-We-Were-Free-Mastered-MP3.mp3?rlkey=eipwfp09qtq615bcys791l5el&raw=1",
   "videos": []
 }
