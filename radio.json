@@ -5,7 +5,7 @@
     "title": "Stay in the Sound",
     "artist": "Skyline Theory",
     "album": "Fade and Fire",
-    "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-stay-in-the-sound-cover.png",
+    "cover": "images/covers/skyline-theory-stay-in-the-sound-cover.png",
     "audioSrc": "https://www.dropbox.com/scl/fi/h537vb9szh61ccgenh1g7/Stay-in-the-Sound-Mastered-MP3.mp3?rlkey=enc1qe7jdkkoxnva2a26hx7ni&raw=1",
     "videos": []
   },
@@ -14,7 +14,7 @@
       "title": "Better Days",
       "artist": "Skyline Theory",
       "album": "Bending Reality",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-better-days-cover.png",
+      "cover": "images/covers/skyline-theory-better-days-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/yfg3ebeoyoigfdl8bopxm/Better-Days-Mastered-MP3.mp3?rlkey=ifbiooenl92q31cuxipi8chat&raw=1",
       "videos": []
     },
@@ -22,7 +22,7 @@
       "title": "Carry Me Through",
       "artist": "Skyline Theory",
       "album": "Bending Reality",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-carry-me-through-cover.png",
+      "cover": "images/covers/skyline-theory-carry-me-through-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/69dnig1368tmjl46pgufw/Carry-Me-Through-Version-1-Mastered-MP3.mp3?rlkey=ipj07k45a62owdrs10u632hvg&raw=1",
       "videos": []
     },
@@ -30,7 +30,7 @@
       "title": "Chasing the Feeling",
       "artist": "Skyline Theory",
       "album": "Bending Reality",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-chasing-the-feeling-cover.png",
+      "cover": "images/covers/skyline-theory-chasing-the-feeling-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/tpapydw0e3f10hpmljq2w/Chasing-the-Feeling-Mastered-MP3.mp3?rlkey=f79tydtis9c8ltd1kfly8foyz&raw=1",
       "videos": []
     },
@@ -38,7 +38,7 @@
       "title": "Falling Into Light",
       "artist": "Skyline Theory",
       "album": "Bending Reality",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-falling-into-light-cover.png",
+      "cover": "images/covers/skyline-theory-falling-into-light-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/5b1oko8hic2k1j629qhhn/Falling-into-Light-Mastered-MP3.mp3?rlkey=8so4qtnrirb6hkxa01w7bj1dd&raw=1",
       "videos": []
     },
@@ -46,7 +46,7 @@
       "title": "Ghost in The Mirror",
       "artist": "Skyline Theory",
       "album": "Bending Reality",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-ghost-in-the-mirror-cover.png",
+      "cover": "images/covers/skyline-theory-ghost-in-the-mirror-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/tqvt6k6i1lfpaa7a1erot/Ghost-in-the-Mirror-Version-2-Mastered-MP3.mp3?rlkey=3ixn0y0xq4incwrdst4y6szcu&raw=1",
       "videos": []
     },
@@ -54,7 +54,7 @@
       "title": "Hearts Like These",
       "artist": "Skyline Theory",
       "album": "Bending Reality",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-hearts-like-these-cover.png",
+      "cover": "images/covers/skyline-theory-hearts-like-these-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/6fvcx28c1md1453x9gkuy/Hearts-Like-These-Mastered-MP3.mp3?rlkey=m8c05tr1k3vm0af3vr86s2t3m&raw=1",
       "videos": []
     },
@@ -62,7 +62,7 @@
       "title": "Let It Run Wild",
       "artist": "Skyline Theory",
       "album": "Bending Reality",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-let-it-run-wild-cover.png",
+      "cover": "images/covers/skyline-theory-let-it-run-wild-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/dhob21tq6d8zwaros8onj/Let-It-Run-Wild-Mastered-MP3.mp3?rlkey=2t1f15c1lz7a95mfuzyh6vfmj&raw=1",
       "videos": []
     },
@@ -70,7 +70,7 @@
       "title": "Open Roads and Broken Nights",
       "artist": "Skyline Theory",
       "album": "Bending Reality",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-open-roads-and-broken-nights-cover.png",
+      "cover": "images/covers/skyline-theory-open-roads-and-broken-nights-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/3m3vud26fg49rzr471g83/Open-Roads-and-Broken-Nights-Mastered-MP3.mp3?rlkey=lv3jmtjkvqhlj3jln42kh31yw&raw=1",
       "videos": []
     },
@@ -78,7 +78,7 @@
       "title": "Something Changed",
       "artist": "Skyline Theory",
       "album": "Bending Reality",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-something-changed-cover.png",
+      "cover": "images/covers/skyline-theory-something-changed-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/vtb9bd6hjqkwyw2e46wyi/Something-Changed-Mastered-MP3.mp3?rlkey=oenb5eh0vr94orttp7dqidcc6&raw=1",
       "videos": []
     },
@@ -86,7 +86,7 @@
       "title": "Stay Until the Sunrise",
       "artist": "Skyline Theory",
       "album": "Bending Reality",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-stay-until-the-sunrise-cover.png",
+      "cover": "images/covers/skyline-theory-stay-until-the-sunrise-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/d9kw1lj5bxkax9uqapdik/Stay-Until-the-Sunrise-Mastered-MP3.mp3?rlkey=86xqp27garczvvae3hzjefr6g&raw=1",
       "videos": []
     },
@@ -94,7 +94,7 @@
       "title": "When We Were Free",
       "artist": "Skyline Theory",
       "album": "Bending Reality",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-when-we-were-free-cover.png",
+      "cover": "images/covers/skyline-theory-when-we-were-free-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/ly7j3ckfar207g2s0qizi/When-We-Were-Free-Mastered-MP3.mp3?rlkey=eipwfp09qtq615bcys791l5el&raw=1",
       "videos": []
     },
@@ -102,7 +102,7 @@
       "title": "When the World Goes Quiet",
       "artist": "Skyline Theory",
       "album": "Bending Reality",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-when-the-world-goes-quiet-cover.png",
+      "cover": "images/covers/skyline-theory-when-the-world-goes-quiet-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/xqh31ctegva6e64k0st5y/When-the-World-Goes-Quiet-Mastered-MP3.mp3?rlkey=xebvgptkrfgfxx3fki02hv6od&raw=1",
       "videos": []
     },
@@ -110,7 +110,7 @@
       "title": "Break the Pattern",
       "artist": "Skyline Theory",
       "album": "Fade and Fire",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-break-the-pattern-cover.png",
+      "cover": "images/covers/skyline-theory-break-the-pattern-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/q21936fhsilxsucqmgq5c/Break-the-Pattern-Mastered-MP3.mp3?rlkey=vpl8pt15ld36cj6pgqpf09l9e&raw=1",
       "videos": []
     },
@@ -118,7 +118,7 @@
       "title": "Echoes in the Dark",
       "artist": "Skyline Theory",
       "album": "Fade and Fire",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-echoes-in-the-dark-cover.png",
+      "cover": "images/covers/skyline-theory-echoes-in-the-dark-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/qck713fejn6mkdbixgz5b/Echoes-in-the-Dark-Mastered-MP3.mp3?rlkey=c12ew6a676oja0lsg36g5cg9f&raw=1",
       "videos": []
     },
@@ -126,7 +126,7 @@
       "title": "Fading Lights",
       "artist": "Skyline Theory",
       "album": "Fade and Fire",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-fading-lights-cover.png",
+      "cover": "images/covers/skyline-theory-fading-lights-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/qa97hk71beb6zxjy5areo/Fading-Lights-Mastered-MP3.mp3?rlkey=o9qwh08d5crxheslrg7yi2dqa&raw=1",
       "videos": []
     },
@@ -134,7 +134,7 @@
       "title": "Gravity Fails",
       "artist": "Skyline Theory",
       "album": "Fade and Fire",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-gravity-fails-cover.png",
+      "cover": "images/covers/skyline-theory-gravity-fails-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/muhgoy335ccpuzspq133j/Gravity-Fails-Mastered-MP3.mp3?rlkey=wwrhhkmo51qu7w1p8mt56vyka&raw=1",
       "videos": []
     },
@@ -142,7 +142,7 @@
       "title": "Higher Than Air",
       "artist": "Skyline Theory",
       "album": "Fade and Fire",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-higher-than-air-cover.png",
+      "cover": "images/covers/skyline-theory-higher-than-air-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/r9zg94laprnvo8uzb01nc/Higher-Than-Air-Mastered-MP3.mp3?rlkey=pv2ggrzv261n6gj66ekve8lwp&raw=1",
       "videos": []
     },
@@ -150,7 +150,7 @@
       "title": "Hold the Moment",
       "artist": "Skyline Theory",
       "album": "Fade and Fire",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-hold-the-moment-cover.png",
+      "cover": "images/covers/skyline-theory-hold-the-moment-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/an89o7vj65pnz05ek5ta2/Hold-The-Moment-Mastered-MP3.mp3?rlkey=6hgheidqoejmir0kos0k505nm&raw=1",
       "videos": []
     },
@@ -158,7 +158,7 @@
       "title": "No Way Back",
       "artist": "Skyline Theory",
       "album": "Fade and Fire",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-no-way-back-cover.png",
+      "cover": "images/covers/skyline-theory-no-way-back-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/aivr4q6t138zwok7ezxvk/No-Way-Back-Version-1-Mastered-MP3.mp3?rlkey=m8d3svto6bc3bvby544xsrdb9&raw=1",
       "videos": []
     },
@@ -166,7 +166,7 @@
       "title": "Pressure Lines",
       "artist": "Skyline Theory",
       "album": "Fade and Fire",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-pressure-lines-cover.png",
+      "cover": "images/covers/skyline-theory-pressure-lines-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/4ouoq7wvizjze81jm0r9x/Pressure-Lines-Mastered-MP3.mp3?rlkey=nu40ipzllzv6o5h9ma5lfb1ej&raw=1",
       "videos": []
     },
@@ -174,7 +174,7 @@
       "title": "Run Through Fire",
       "artist": "Skyline Theory",
       "album": "Fade and Fire",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-run-through-fire-cover.png",
+      "cover": "images/covers/skyline-theory-run-through-fire-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/pdot621l50m10bl5gbl2z/RUN-THROUGH-FIRE-Mastered-MP3.mp3?rlkey=60g8tw0pmbnehf2v27k7nlgrk&raw=1",
       "videos": []
     },
@@ -182,7 +182,7 @@
       "title": "Stay in the Sound",
       "artist": "Skyline Theory",
       "album": "Fade and Fire",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-stay-in-the-sound-cover.png",
+      "cover": "images/covers/skyline-theory-stay-in-the-sound-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/h537vb9szh61ccgenh1g7/Stay-in-the-Sound-Mastered-MP3.mp3?rlkey=enc1qe7jdkkoxnva2a26hx7ni&raw=1",
       "videos": []
     },
@@ -190,7 +190,7 @@
       "title": "Until the Silence Ends",
       "artist": "Skyline Theory",
       "album": "Fade and Fire",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-until-the-silence-ends-cover.png",
+      "cover": "images/covers/skyline-theory-until-the-silence-ends-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/0jbka7koxmgu701q6tc1b/Until-the-Silence-Ends-Mastered-MP3.mp3?rlkey=dl4a8egual27kviybp5m1wfkz&raw=1",
       "videos": []
     },
@@ -198,7 +198,7 @@
       "title": "We Don't Come Down",
       "artist": "Skyline Theory",
       "album": "Fade and Fire",
-      "cover": "https://raw.githubusercontent.com/SteveP999/Skyline-Theory/main/images/covers/skyline-theory-we-dont-come-down-cover.png",
+      "cover": "images/covers/skyline-theory-we-dont-come-down-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/h5svn3mi4a63930w9l7ui/We-Don-t-Come-Down-Mastered-MP3.mp3?rlkey=zt4xmckggd78pupouh05pibge&raw=1",
       "videos": []
     }
